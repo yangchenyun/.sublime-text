@@ -1,0 +1,29 @@
+{
+	"auto_upgrade_last_run": 1349837686,
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"CoffeeScript",
+		"DocBlockr",
+		"emmet-sublime",
+		"Gist",
+		"Http Requester",
+		"Nettuts+ Fetch",
+		"Nodejs",
+		"Package Control",
+		"PlainTasks",
+		"Sass",
+		"SASS Build",
+		"SideBarEnhancements",
+		"SublimeBlockCursor",
+		"SublimeLinter",
+		"SublimeREPL",
+		"SublimeXiki",
+		"Theme - Soda"
+	],
+	"repositories":
+	[
+		"https://github.com/poritsky/PlainTasksOF"
+	]
+}

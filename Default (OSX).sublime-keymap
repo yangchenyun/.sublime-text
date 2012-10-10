@@ -1,0 +1,175 @@
+[
+    { "keys": [",", "a", "="], "command": "alignment" },
+/**
+ *  VINTAGE MODE
+ */
+
+    { "keys": ["j", "j"], "command": "exit_insert_mode",
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+
+    { "keys": [":"], "command": "show_overlay", "args": {"overlay": "command_palette" } ,
+        "context":
+        [
+            { "key": "setting.command_mode" },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+
+// WINDOW JUMPING
+
+    { "keys": ["ctrl+l"], "command": "move_group_focus",
+        "args": {"direction": "right"},
+        "context": 
+        [
+            {"key": "setting.vintage_ctrl_keys"}, 
+            {"key": "setting.command_mode"}
+        ]
+    },
+
+    { "keys": ["ctrl+h"], "command": "move_group_focus",
+        "args": {"direction": "left"},
+        "context": 
+        [
+            {"key": "setting.vintage_ctrl_keys"}, 
+            {"key": "setting.command_mode"}
+        ]
+    },
+
+    { "keys": ["ctrl+j"], "command": "move_group_focus",
+        "args": {"direction": "down"},
+        "context": 
+        [
+            {"key": "setting.vintage_ctrl_keys"}, 
+            {"key": "setting.command_mode"}
+        ]
+    },
+
+    { "keys": ["ctrl+k"], "command": "move_group_focus",
+        "args": {"direction": "up"},
+        "context": 
+        [
+            {"key": "setting.vintage_ctrl_keys"}, 
+            {"key": "setting.command_mode"}
+        ]
+    },
+// WINDOW LAYOUT
+    { "keys": ["ctrl+w", "o"], "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1]]
+        },
+        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    },
+
+    { "keys": ["ctrl+w", "s"], "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+        },
+        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    },
+
+    {
+        "keys": ["ctrl+w", "s", "3"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 0.33, 0.66, 1.0],
+            "cells": [[0, 0, 1, 1], [0, 1, 1, 2], [0, 2, 1, 3]]
+        },
+        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    },
+
+    {
+        "keys": ["ctrl+w", "s", "v"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells":
+            [
+                [0, 0, 1, 1], [1, 0, 2, 1],
+                [0, 1, 1, 2], [1, 1, 2, 2]
+            ]
+        },
+        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    },
+
+    { "keys": ["ctrl+w", "v"], "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+        },
+        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    },    
+
+    {
+        "keys": ["ctrl+w", "v", "3"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.33, 0.66, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+        },
+        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    },
+
+    {
+        "keys": ["ctrl+w", "v", "4"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+        },
+        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    },
+// TAB NAVIGATION
+    // FIXME it will jump tabs in other window
+    { "keys": ["super+l"], "command": "next_view",
+        "context":
+        [
+            {"key": "setting.command_mode"}
+        ]
+    },
+
+    { "keys": ["super+h"], "command": "prev_view" ,
+        "context":
+        [
+            {"key": "setting.command_mode"}
+        ]
+    },
+
+// MISC
+
+    // FIXME <leader>f should:
+    // 1. focus_side_bar
+    // 2. map hjkl to nav keys when sidebar is focused
+    // 3. focus_panel 
+    // { "keys": [",", "f"], "command": "focus_side_bar",
+    { "keys": [",", "f"], "command": "toggle_side_bar", 
+        "context": 
+        [
+            {"key": "setting.command_mode"}
+        ] 
+    },
+
+    { "keys": ["ctrl+0"], "command": "focus_side_bar",
+       "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
+    }
+]
