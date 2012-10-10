@@ -58,6 +58,15 @@
         ]
     },
 // WINDOW LAYOUT
+    // "cols" and "rows" specify the coordinates in x and y
+    // "cells" draw cells with [startx, starty, endx, endy].
+    // -----------------
+    // |               |
+    // |               |
+    // |               |
+    // |               |
+    // -----------------
+
     { "keys": ["ctrl+w", "o"], "command": "set_layout",
         "args":
         {
@@ -67,6 +76,14 @@
         },
         "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
     },
+
+    // -----------------
+    // |               |
+    // |               |
+    // -----------------
+    // |               |
+    // |               |
+    // -----------------
 
     { "keys": ["ctrl+w", "s"], "command": "set_layout",
         "args":
@@ -78,33 +95,12 @@
         "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
     },
 
-    {
-        "keys": ["ctrl+w", "s", "3"],
-        "command": "set_layout",
-        "args":
-        {
-            "cols": [0.0, 1.0],
-            "rows": [0.0, 0.33, 0.66, 1.0],
-            "cells": [[0, 0, 1, 1], [0, 1, 1, 2], [0, 2, 1, 3]]
-        },
-        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
-    },
-
-    {
-        "keys": ["ctrl+w", "s", "v"],
-        "command": "set_layout",
-        "args":
-        {
-            "cols": [0.0, 0.5, 1.0],
-            "rows": [0.0, 0.5, 1.0],
-            "cells":
-            [
-                [0, 0, 1, 1], [1, 0, 2, 1],
-                [0, 1, 1, 2], [1, 1, 2, 2]
-            ]
-        },
-        "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
-    },
+    // -----------------
+    // |       |       |
+    // |       |       |
+    // |       |       |
+    // |       |       |
+    // -----------------
 
     { "keys": ["ctrl+w", "v"], "command": "set_layout",
         "args":
@@ -116,29 +112,58 @@
         "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
     },    
 
+    // -----------------
+    // |       |       |
+    // |       |--------
+    // |       |       |
+    // |       |--------
+    // |       |       |
+    // -----------------
+
     {
-        "keys": ["ctrl+w", "v", "3"],
+        "keys": ["ctrl+w", "f"],
         "command": "set_layout",
         "args":
         {
-            "cols": [0.0, 0.33, 0.66, 1.0],
-            "rows": [0.0, 1.0],
-            "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+            "cols": [0.0, 0.6, 1.0],
+            "rows": [0.0, 0.33, 0.66, 1.0],
+            "cells": [
+                [0, 0, 1, 3], [1, 0, 2, 1], 
+                              [1, 1, 2, 2], 
+                              [1, 2, 2, 3]
+            ]
         },
         "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
     },
 
+    // -----------------
+    // |               |
+    // |               |
+    // -----------------
+    // |    |     |    |
+    // |    |     |    |
+    // -----------------
     {
-        "keys": ["ctrl+w", "v", "4"],
+        "keys": ["ctrl+w", "b"],
         "command": "set_layout",
         "args":
         {
-            "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
-            "rows": [0.0, 1.0],
-            "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+            "cols": [0.0, 0.33, 0.66, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells": [
+                [0, 0, 3, 1],  
+                [0, 1, 1, 2], [1, 1, 2, 2], [2, 1, 3, 2]
+            ]
         },
         "context": [{"key": "setting.vintage_ctrl_keys"}, {"key": "setting.command_mode"}]
     },
+
+    { "keys": ["alt+1"], "command": "move_to_group", "args": { "group": 0 } },
+    { "keys": ["alt+2"], "command": "move_to_group", "args": { "group": 1 } },
+    { "keys": ["alt+3"], "command": "move_to_group", "args": { "group": 2 } },
+    { "keys": ["alt+4"], "command": "move_to_group", "args": { "group": 3 } },
+
+
 // TAB NAVIGATION
     // FIXME it will jump tabs in other window
     { "keys": ["super+l"], "command": "next_view",
